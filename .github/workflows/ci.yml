@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # deps.edn's kotoba-lang/identity dep uses :local/root "../identity".
+      - run: git clone --depth 1 https://github.com/kotoba-lang/identity.git ../identity
+      - uses: DeLaGuardo/setup-clojure@13.4
+        with:
+          cli: latest
+      - run: clojure -M:test
+      - run: clojure -M:lint
