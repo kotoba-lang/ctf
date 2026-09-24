@@ -1,12 +1,12 @@
 (ns ctf.adapters.xrpc-http
-  (:require [clojure.edn :as edn]
+  (:require [kotoba.http.form-urlencoded :as form-urlencoded] [clojure.edn :as edn]
             [ctf.adapters.etzhayyim :as etzhayyim])
-  (:import [java.net URI URLEncoder]
+  (:import [java.net URI]
            [java.net.http HttpClient HttpRequest HttpRequest$BodyPublishers HttpResponse$BodyHandlers]
            [java.nio.charset StandardCharsets]))
 
 (defn- endpoint [base-url nsid]
-  (str base-url "/xrpc/" (URLEncoder/encode nsid StandardCharsets/UTF_8)))
+  (str base-url "/xrpc/" (form-urlencoded/form-encode nsid)))
 
 (defn- request [url body headers]
   (let [builder (doto (HttpRequest/newBuilder (URI/create url))

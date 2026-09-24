@@ -1,5 +1,9 @@
 {:paths ["src"]
- :deps {io.github.kotoba-lang/identity {:git/sha "5cf94e38c816ced6857ef62de344f6adea9fc050"}}
+ :deps {
+        ;; kotoba.http.form-urlencoded replaced java.net.URLEncoder/URLDecoder here
+        ;; (2026-09-24). An explicit floor: tools.deps takes the NEWEST sha it is shown.
+        io.github.kotoba-lang/http-parse-url {:git/sha "8ad2f9680111e50168b4078a64601dc9296158d7"}
+        io.github.kotoba-lang/identity {:git/sha "5cf94e38c816ced6857ef62de344f6adea9fc050"}}
  :aliases
  {:test {:extra-paths ["test"]
          :extra-deps {io.github.cognitect-labs/test-runner
