@@ -1,5 +1,5 @@
 (ns ctf.adapters.xrpc-http-test
-  (:require [clojure.edn :as edn]
+  (:require [kotoba.lang.edn :as edn]
             [kotoba.test :refer [deftest is]]
             [ctf.adapters.etzhayyim]
             [ctf.adapters.xrpc-http :as xrpc]
