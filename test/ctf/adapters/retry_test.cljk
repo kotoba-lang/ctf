@@ -1,5 +1,5 @@
 (ns ctf.adapters.retry-test
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [ctf.adapters.etzhayyim :as etzhayyim]
             [ctf.adapters.retry :as retry]))
 

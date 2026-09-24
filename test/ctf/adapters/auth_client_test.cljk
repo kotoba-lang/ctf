@@ -1,5 +1,5 @@
 (ns ctf.adapters.auth-client-test
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [ctf.adapters.auth-client :as auth-client]
             [ctf.adapters.etzhayyim :as etzhayyim]))
 

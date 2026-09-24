@@ -1,5 +1,5 @@
 (ns ctf.core-test
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [ctf.core :as c]
             [ctf.datom :as d]
             [ctf.model :as m]

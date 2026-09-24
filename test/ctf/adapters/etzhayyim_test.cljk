@@ -1,5 +1,5 @@
 (ns ctf.adapters.etzhayyim-test
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [ctf.adapters.etzhayyim :as a]
             [ctf.core :as c]
             [ctf.model :as m]))
