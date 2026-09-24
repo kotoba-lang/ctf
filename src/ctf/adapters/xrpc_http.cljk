@@ -1,5 +1,5 @@
 (ns ctf.adapters.xrpc-http
-  (:require [kotoba.http.form-urlencoded :as form-urlencoded] [clojure.edn :as edn]
+  (:require [kotoba.http.form-urlencoded :as form-urlencoded] [kotoba.lang.edn :as edn]
             [ctf.adapters.etzhayyim :as etzhayyim])
   (:import [java.net URI]
            [java.net.http HttpClient HttpRequest HttpRequest$BodyPublishers HttpResponse$BodyHandlers]
