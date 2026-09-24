@@ -1,5 +1,5 @@
 (ns ctf.adapters.schema-conformance-test
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [ctf.adapters.schema-conformance :as sc]
             [ctf.model :as m]))
 

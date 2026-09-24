@@ -1,5 +1,5 @@
 (ns ctf.adapters.evidence-ledger-test
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [ctf.adapters.evidence-ledger :as evidence-ledger]
             [ctf.model :as m]
             [identity.adapters.ledger :as ledger]))
