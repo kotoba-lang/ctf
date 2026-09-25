@@ -1,5 +1,5 @@
 (ns ctf.core-test
-  (:require [kotoba.test :refer [deftest is]]
+  (:require [kotoba.lang.error :as kerror] [kotoba.test :refer [deftest is]]
             [ctf.core :as c]
             [ctf.datom :as d]
             [ctf.model :as m]
@@ -21,9 +21,9 @@
 (deftest rejects-unknown-route-and-missing-case-ref
   (let [port (reify p/ICtfScreening
                (screen! [_ _ _] (throw (ex-info "unexpected" {}))))]
-    (is (thrown? #?(:clj clojure.lang.ExceptionInfo :cljs ExceptionInfo)
+    (is (thrown? kerror/ExceptionInfo
                  (c/screen port (m/request "c2" {:subject/id "s"} {:routes [:other]}))))
-    (is (thrown? #?(:clj clojure.lang.ExceptionInfo :cljs ExceptionInfo)
+    (is (thrown? kerror/ExceptionInfo
                  (c/screen port (m/request "c3" {:subject/id "s"} {}))))))
 
 (deftest emits-ctf-datoms
